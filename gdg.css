@@ -1,0 +1,248 @@
+/* THE CSS CODE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0; 
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #e142d6, #c3cfe2);
+  color: #202124;
+
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  box-sizing: border-box;
+}
+
+.navigation {
+    margin-top: 0px;
+    background-color: #57a4f7;
+    padding: 10px 20px;
+    display: flex;
+    height: 48px;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: #458eed 3px solid;
+    animation: slideinNav 0.9s linear;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 80px;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #458eed;
+    /* hover effect */
+}
+
+@keyframes slideinNav {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.app {
+    background: rgba(220, 240, 250, 1);
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1a73e8;
+    text-align: center;
+}
+
+/* Input area */
+.task-input-container {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.task-input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.task-input:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 1px #1a73e8;
+}
+
+.add-btn {
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #1669c1;
+}
+
+/* Tasks */
+.task-list {
+    flex: 1;
+    padding: 10px 20px;
+    min-height: 200px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f4;
+    transition: background 0.2s;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-text {
+    font-size: 15px;
+    color: #202124;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #80868b;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ea4335;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.delete-btn:hover {
+    color: #c5221f;
+    background-color: rgba(234, 67, 53, 0.1);
+}
+
+/* Footer */
+.footer {
+    padding: 12px 20px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #5f6368;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #1a73e8;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.clear-btn:hover {
+    background: rgba(26, 115, 232, 0.1);
+}
+
+.clear-btn:disabled {
+    color: #dadce0;
+    cursor: not-allowed;
+}
+
+.clear-btn:disabled:hover {
+    background: none;
+}
+
+.empty {
+    text-align: center;
+    color: #80868b;
+    font-size: 15px;
+    padding: 40px 20px;
+}
+
+/* Animation for new tasks */
+.task-item {
+    animation: slideInTask 0.3s ease-out;
+}
+
+@keyframes slideInTask {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
